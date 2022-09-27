@@ -1,6 +1,7 @@
 import os
 import logging
 import apie
+from api_external import external
 
 class upload(external):
     def __init__(this, name="upload"):
@@ -10,11 +11,12 @@ class upload(external):
 
         #this.allowedNext = ['help'] only
 
-        this.helpText = '''\
+        this.helpText = f'''\
 Upload any file by offloading the actual work to another API.
 This does not (currently) have access to the local filesystem.
 
 Per the parent 'external':
+{this.helpText}
 '''
         this.helpText += super().helpText
 
