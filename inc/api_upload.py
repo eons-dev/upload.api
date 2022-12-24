@@ -11,12 +11,14 @@ class upload(external):
 
         #this.allowedNext = ['help'] only
 
-        this.helpText = f'''\
+    # Required Endpoint method. See that class for details.
+    def GetHelpText(this):
+        return f'''\
 Upload any file by offloading the actual work to another API.
 This does not (currently) have access to the local filesystem.
 
 Per the parent 'external':
-{this.helpText}
+{super().GetHelpText()}
 '''
         this.helpText += super().helpText
 
